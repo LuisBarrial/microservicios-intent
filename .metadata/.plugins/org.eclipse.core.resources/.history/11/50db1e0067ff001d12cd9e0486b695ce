@@ -1,0 +1,36 @@
+package com.example.demo.usuarioService;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.example.demo.entidades.Usuario;
+import com.example.demo.repositorio.UsuarioRepositorio;
+
+@Service
+public class UsuarioService{
+
+	
+	@Autowired
+	private UsuarioRepositorio usuarioRepositorio;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	public List<Usuario> getAll(){
+		return usuarioRepositorio.findAll();
+	}
+	
+	public Usuario getUsuarioById(int id){
+		return usuarioRepositorio.findById(id).orElse(null);
+	}
+	
+	public Usuario save(Usuario usuario) {
+		Usuario nuevoUser = usuarioRepositorio.save(usuario);
+		return nuevoUser;
+		
+	}
+	
+}

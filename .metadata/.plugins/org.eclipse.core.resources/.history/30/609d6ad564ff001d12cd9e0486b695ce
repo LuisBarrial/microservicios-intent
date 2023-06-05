@@ -1,0 +1,13 @@
+package com.moto.service.servicioM;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.moto.service.repositorio.MotoRepositorio;
+
+public class MotoService {
+
+	@Autowired
+	private MotoRepositorio motoRepositorio;
+	
+	
+}

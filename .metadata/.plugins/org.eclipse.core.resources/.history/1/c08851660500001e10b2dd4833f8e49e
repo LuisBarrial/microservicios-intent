@@ -1,0 +1,11 @@
+package com.moto.service.model.Dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.moto.service.model.Mascota;
+
+@Repository
+public interface MascotaDAO extends JpaRepository<Mascota, Integer>{
+	
+}

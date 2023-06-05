@@ -1,0 +1,14 @@
+package com.moto.service.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Mascota {
+
+	private int Id;
+	
+	private String nombre;
+	
+	private int refugioId;
+	
+}

@@ -1,0 +1,28 @@
+package com.moto.service.Servicio;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.moto.service.model.Mascota;
+import com.moto.service.model.Dao.MascotaDAO;
+
+@Service
+public class MascotaService {
+	
+	@Autowired
+	private MascotaDAO mascotaDAO;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	public List<Mascota> obtenerMascotas(){
+		return mascotaDAO.findAll();
+	}
+	public Mascota crearMascotas(Mascota mascota){
+		return mascotaDAO.save(mascota);
+	}
+
+}

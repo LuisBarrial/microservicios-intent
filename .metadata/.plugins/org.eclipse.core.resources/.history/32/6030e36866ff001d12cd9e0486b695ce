@@ -1,0 +1,11 @@
+package com.example.demo.modelos;
+
+public class Moto {
+
+	private String marca;
+	
+	private String modelo;
+	
+	
+	
+}

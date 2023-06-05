@@ -1,0 +1,20 @@
+package com.example.demo.feign;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import com.example.demo.modelos.Moto;
+
+@FeignClient(name = "moto-service",url = "http://localhost:8003")
+public interface MotofeignClient {
+
+	@PostMapping("/moto")
+	public Moto save(@RequestBody Moto moto);
+	
+	@GetMapping("/moto/usuario/{usuarioId}")
+	public List<Moto> getMotos(@PathVariable("usuarioId") int usuarioId);
+}

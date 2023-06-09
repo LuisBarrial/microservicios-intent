@@ -18,8 +18,8 @@ spring:
         locator:
           enable: true
       routes:
-        - id: Microservicios1
-          uri: lb://Microservicios1
+        - id: MicroServicios1
+          uri: lb://MicroServicios1
           predicates:
             - Path=/usuario/**
         - id: MicroServicioCarro
